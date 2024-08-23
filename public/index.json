@@ -1,0 +1,120 @@
+[
+{
+	"uri": "//localhost:1313/1-introduction/",
+	"title": "Introduction",
+	"tags": [],
+	"description": "",
+	"content": "Before we dive into the specifics of our workshop, let\u0026rsquo;s take a moment to introduce the primary tools and services we\u0026rsquo;ll be utilizing.\nContent:\nAmazon EC2 - Amazon Elastic Compute Cloud Amazon S3 - Amazon Simple Storage Service AWS SDK - Your Toolkit for Building on AWS AWS Secrets Manager Amazon EC2 - Amazon Elastic Compute Cloud AWS EC2 is like renting virtual computers online. Instead of buying and maintaining your own physical servers, you can use AWS to create virtual ones whenever you need them. These virtual computers can be used for many things, like running websites, storing data, or analyzing large amounts of information.\nThe great thing about EC2 is that you only pay for what you use. So, if you need more computers for a busy time, you can easily add them. When things slow down, you can reduce the number of computers to save money. It\u0026rsquo;s flexible and cost-effective.\nFor more information: Amazon Elastic Compute Cloud (Amazon EC2)\nAmazon S3 - Amazon Simple Storage Service Amazon S3 is like a massive online storage closet. You can put any type of file in it, from pictures and videos to documents and software. It\u0026rsquo;s designed to be super easy to use and can handle almost any amount of data.\nThink of it as a place where you can store your digital stuff safely and access it from anywhere in the world. You don\u0026rsquo;t have to worry about running out of space or losing your files. S3 is used for all sorts of things, like storing website content, backing up data, and hosting large files.\nFor more information: Amazon Simple Storage Service (Amazon S3)\nAWS SDK - Your Toolkit for Building on AWS AWS SDK is a collection of tools and libraries that make it easier for developers to interact with AWS services. It provides a bridge between your code and AWS, handling complex tasks like authentication, error handling, and data formatting. Instead of writing lengthy code to manage these details, you can use the SDK to focus on building the core logic of your application. Think of it as a helpful assistant that simplifies your work with AWS.\nBy using AWS SDK, you can focus on building your application\u0026rsquo;s core features without worrying about the underlying AWS infrastructure.\nAWS Secrets Manager AWS Secrets Manager is like a secure lockbox for your sensitive information. It helps you store, manage, and retrieve secrets like passwords, API keys, and database credentials. Instead of hardcoding these secrets directly into your applications, you can keep them safe and secure in Secrets Manager.\nThis service makes it easier to rotate passwords regularly, reducing the risk of security breaches. It also helps you control who can access your secrets, ensuring that only authorized users can use them. Think of it as a central place to protect your valuable digital keys.\nFor more information: AWS Secrets Manager\n"
+},
+{
+	"uri": "//localhost:1313/",
+	"title": "AWS Project: Uploading Image To S3 Bucket - Server Deploy In EC2",
+	"tags": [],
+	"description": "",
+	"content": "AWS Project: Uploading Image To S3 Bucket - Server Deploy In EC2 Overview This project demonstrates the process of uploading images to an Amazon S3 bucket using the AWS SDK and deploying the server application on an Amazon EC2 instance. By following the steps outlined in this guide, you\u0026rsquo;ll gain a hands-on understanding of how to leverage AWS services for image storage and server deployment.\nMain Content Introduction Preparation Configure Source Code For Backend Integrate S3 Services Publish Source Code to EC2 Server "
+},
+{
+	"uri": "//localhost:1313/2-preparation/1-create-iam-role/",
+	"title": "IAM Role",
+	"tags": [],
+	"description": "",
+	"content": "Creating IAM Role Log-in to the AWS Console from the AWS Web Services homepage Navigate to the Identity and Access Management (IAM) page by either: Clicking on the account name in the top right corner and select My Security Credentials Typing IAM into the services search-bar and selecting \u0026lsquo;IAM\u0026rsquo; From the left pane of the IAM console, select Roles then click on Create role button. Create a new role for EC2 instance to access S3 storage. Choose AWS Service for Trusted entity type and EC2 for Use case sections. Then click Next button. Add permission for access S3 storage. Then click Next button. Enter a Role name (for example: ec2-role-for-s3-and-secret-management) and review create role information. Click Create role button. After successfully creating a role, go to your new role details page, dropdown the Add permissions and choose Create inline policy Click JSON tab and enter the policy below to the Policy editor { \u0026#34;Version\u0026#34;: \u0026#34;2012-10-17\u0026#34;, \u0026#34;Statement\u0026#34;: [ { \u0026#34;Sid\u0026#34;: \u0026#34;Statement1\u0026#34;, \u0026#34;Effect\u0026#34;: \u0026#34;Allow\u0026#34;, \u0026#34;Action\u0026#34;: [ \u0026#34;secretsmanager:GetSecretValue\u0026#34; ], \u0026#34;Resource\u0026#34;: [ \u0026#34;arn:aws:secretsmanager:us-east-1:017820676824:secret:upload-image-to-s3-secret-8UsdOW\u0026#34; ] } ] } Enter the name for the new policy and click Create policy button "
+},
+{
+	"uri": "//localhost:1313/4-integrate-s3-services/1-aws-config-file/",
+	"title": "AWS Config File",
+	"tags": [],
+	"description": "",
+	"content": " Create a new aws config file in src/config/awsConfig.ts let jsonSecret= { AWS_ACCESS_KEY_ID: process.env.AWS_ACCESS_KEY_ID; AWS_SECRET_ACCESS_KEY: process.env.AWS_SECRET_ACCESS_KEY; BUCKET_NAME: process.env.BUCKET_NAME; }; This code creates an object jsonSecret to store AWS credentials and bucket name. let s3 = new S3Client({ credentials: { accessKeyId: jsonSecret.AWS_ACCESS_KEY_ID, secretAccessKey: jsonSecret.AWS_SECRET_ACCESS_KEY, }, region: \u0026#34;us-east-1\u0026#34;, }); This code imports the S3Client class from the @aws-sdk/client-s3 package. This package provides the necessary tools for interacting with S3. Then exports the s3 variable, which holds the S3Client instance. This allows other parts of your application to use it to interact with S3. "
+},
+{
+	"uri": "//localhost:1313/2-preparation/2-create-iam-user/",
+	"title": "Create IAM User",
+	"tags": [],
+	"description": "",
+	"content": "Create IAM User Navigate to the Identity and Access Management (IAM) page by either: Clicking on the account name in the top right corner and select My Security Credentials Typing IAM into the services search-bar and selecting \u0026lsquo;IAM\u0026rsquo; From the left pane of the IAM console, select Users then click on Create user button. Enter a user name. Then click Next button. At Permissions options, choose Attach policies directly and then add Permissions policies for IAM User to have full access to S3 storage. Then click Next button. Review the create IAM User information and click Create user button. "
+},
+{
+	"uri": "//localhost:1313/2-preparation/",
+	"title": "Preparation",
+	"tags": [],
+	"description": "",
+	"content": "Tech Stack: AWS Services: EC2, S3, Secrets Manager. Backend: Typescript, ExpressJS. Frontend: ReactJS. Setting up: Create IAM Role Create IAM User Create EC2 Instance Create S3 Bucket "
+},
+{
+	"uri": "//localhost:1313/4-integrate-s3-services/2-get-all-images-pre-signed-urls/",
+	"title": "Get All Images Pre-signed Urls",
+	"tags": [],
+	"description": "",
+	"content": "Create a new file in src/controllers/imageController.ts In src/controllers/imageController.ts file, create a function name getAllImagePreSignedUrls that handles getting all the presigned url of images from S3 bucket\nList Objects: const listObjectRequest = new ListObjectsV2Command({ Bucket: jsonSecret.BUCKET_NAME ? jsonSecret.BUCKET_NAME : \u0026#34;\u0026#34;, Prefix: \u0026#34;images/\u0026#34;, }); The listObjectRequest creates a command to list objects within the specified S3 bucket. The Bucket property sets the bucket name. The Prefix property filters the results to only include objects starting with \u0026ldquo;images/\u0026rdquo;. Retrieve Image Data and Generate Pre-signed URLs: const data = await s3.send(listObjectRequest); The s3.send(listObjectRequest) asynchronously sends the command to S3 and retrieves a list of objects. const urls = data.Contents?.map(async (item) =\u0026gt; { const getObjectCommand = new GetObjectCommand({ Bucket: jsonSecret.BUCKET_NAME, Key: item.Key, ResponseContentDisposition: \u0026#34;inline\u0026#34;, }); const url = await getSignedUrl(s3, getObjectCommand, { expiresIn: 3600 }); return { url, fileName: item.Key?.split(\u0026#34;/\u0026#34;)[1], }; }); let resolvedUrls; if (urls) { resolvedUrls = await Promise.all(urls); } The data.Contents array contains information about each object, including its key. For each object in data.Contents, a GetObjectCommand is created with the bucket name and object key. The getSignedUrl function is used to generate a pre-signed URL for the object, with a 1-hour expiration time. Then the URL and the filename (extracted from the object key) are added to the urls array. Return Response: return res.json(resolvedUrls); The function returns a JSON response containing the array of resolved URLs. Test your API with postman or orther testing methods you prefer: "
+},
+{
+	"uri": "//localhost:1313/3-configure-source-code-for-backend/",
+	"title": "Configure Source code for backend",
+	"tags": [],
+	"description": "",
+	"content": "Configure Source code for backend Create a Nodejs express app and install the dependencies\nGo to your project directory, open the terminal and type: npm init -y npm i ts-node nodemon --save-dev npm i express dotenv multer cors npm i @aws-sdk/client-s3 @aws-sdk/client-secrets-manager @aws-sdk/s3-request-presigner @aws-sdk/client-sns @types/cors @types/express @types/multer @types/node typescript --save-dev Add .env file for store your secrets\nPORT = 80; AWS_ACCESS_KEY_ID = xxxxxxxxxxxx; AWS_SECRET_ACCESS_KEY = xxxxxxxxxxxx; BUCKET_NAME = xxxxxxxxxxxx; AWS_REGION = xxxxxxxxxxxx; AWS_ACCESS_KEY_ID and AWS_SECRET_ACCESS_KEY are typically retrieved from the IAM User we create before. Add a .gitignore file to prevent your secrets and sensitive information in .env file from being pushed to github\n.env node_modules Create your server.ts\nimport express, { Express, Request, Response } from \u0026#34;express\u0026#34;; import dotenv from \u0026#34;dotenv\u0026#34;; import cors from \u0026#34;cors\u0026#34;; import { router as Router } from \u0026#34;./routes\u0026#34;; dotenv.config(); const app: Express = express(); const port = process.env.PORT || 80; app.use(cors()); app.get(\u0026#34;/\u0026#34;, (req: Request, res: Response) =\u0026gt; { res.send(\u0026#34;Express + TypeScript Server\u0026#34;); }); app.listen(port, () =\u0026gt; { console.log(`[server]: Server is running at http://${app.head.name}:${port}`); }); Testing if your server is running\nnpm start OR\nnpm run dev Create a git repository for your src code "
+},
+{
+	"uri": "//localhost:1313/2-preparation/3-create-ec2-instance/",
+	"title": "Create EC2 Instance",
+	"tags": [],
+	"description": "",
+	"content": "Create EC2 Instance Navigate to the EC2 page typing EC2 into the services search-bar and selecting \u0026lsquo;EC2\u0026rsquo; service In the EC2 Dashnoard, select Launch instance for create a new EC2 Instance. Enter a name for EC2 Instance (for example: upload-image-to-s3-server). Choose an Amazon Machine Image (for example I choose Amazon Linux) and choose instance type (for example I choose t2.micro). *Free Tier Eligible: If you have trial account then the options which marked Free Tier Eligible is free for your account. Create a new key pair and allow the access from the internet to your EC2 instance. Note: Key pair would help to log in to our instance using an SSH client. Dropdown Advanced details tab, at IAM instance profile section, attach the IAM Role (ec2-role-for-s3-and-secret-management) you have just created above to your EC2 instance. This role will allow your EC2 instance to access the S3 bucket and AWS secret manager. You can review the summary of the create EC2 information from the left bar and then click Launch instance. "
+},
+{
+	"uri": "//localhost:1313/2-preparation/4-create-s3-bucket/",
+	"title": "Create S3 Bucket",
+	"tags": [],
+	"description": "",
+	"content": "Create S3 Bucket Navigate to the S3 page typing S3 into the services search-bar and selecting \u0026lsquo;S3\u0026rsquo; service Select Create bucket for create a new S3 Bucket. Enter a name for S3 Bucket. Turning off block all public access and tick I acknowledge that the current settings might result in this bucket and the objects within becoming public. for allow access to your S3 buckets objects Review the create S3 Bucket information and then click Create bucket. "
+},
+{
+	"uri": "//localhost:1313/4-integrate-s3-services/3-uploading-image-to-s3-bucket/",
+	"title": "Uploading image to s3 bucket",
+	"tags": [],
+	"description": "",
+	"content": "In src/controllers/imageController.ts file, create a function uploadImage that handles uploading an image to an S3 bucket\nCreating the PutObjectCommand: const fileName = Date.now() + \u0026#34;_\u0026#34; + file.originalname; const fileContent = file.buffer; const putObjectRequest = new PutObjectCommand({ Bucket: jsonSecret.BUCKET_NAME ? jsonSecret.BUCKET_NAME : \u0026#34;\u0026#34;, Key: `images/${fileName}`, Body: fileContent, ContentType: file.mimetype, }); Bucket: Specifies the name of the S3 bucket where the file will be uploaded. Key: Defines the object key (filename) within the bucket where the file will be stored. Body: Contains the binary data of the file to be uploaded. ContentType: Sets the MIME type of the file, which helps clients understand the file format. Sending the Request: await s3.send(putObjectRequest); The await s3.send(putObjectRequest) line asynchronously sends the PutObjectCommand to the S3 service. This uploads the file to the specified bucket. "
+},
+{
+	"uri": "//localhost:1313/4-integrate-s3-services/4-delete-image-from-s3/",
+	"title": "Delete image from s3 bucket",
+	"tags": [],
+	"description": "",
+	"content": "In src/controllers/imageController.ts file, create a function name deleteImage that handles delete an image from S3 bucket\nCreates a DeleteObjectCommand: const { fileName } = req.params; const deleteObjectRequest = new DeleteObjectCommand({ Bucket: jsonSecret.BUCKET_NAME ? jsonSecret.BUCKET_NAME : \u0026#34;\u0026#34;, Key: `images/${fileName}`, }); await s3.send(deleteObjectRequest); DeleteObjectCommand specifies the bucket name and object key to be deleted. The await s3.send(deleteObjectRequest) line asynchronously sends the DeleteObjectCommand to the S3 service, initiating the deletion process. "
+},
+{
+	"uri": "//localhost:1313/4-integrate-s3-services/",
+	"title": "Integrate S3 Services",
+	"tags": [],
+	"description": "",
+	"content": "Overview After completing the setup and configuration steps, we\u0026rsquo;re ready to upload images to S3. We\u0026rsquo;ll use the AWS SDK to create an API that handles the image upload process. To authenticate with AWS and upload images, we\u0026rsquo;ll need the access key from the IAM user we created earlier. This access key provides the necessary credentials to interact with S3 and perform the upload operation. Lets get started this section!\nMain Content AWS Config File Get All Images Pre-signed Urls Uploading Image To S3 Bucket Delete Image From S3 "
+},
+{
+	"uri": "//localhost:1313/5-publish-source-code-to-ec2-server/",
+	"title": "Publish Source Code to EC2 Server",
+	"tags": [],
+	"description": "",
+	"content": "Overview To access S3, our code needs the BUCKET_NAME, AWS_SECRET_ACCESS_KEY, and AWS_ACCESS_KEY_ID. Never share these keys publicly to avoid losing money. We store them in a .env file on our local server. However, when running on EC2, we need a secure way to access these keys without exposing them in the code. AWS Secrets Manager provides a solution by storing these keys securely and granting EC2 the necessary permissions to retrieve them.\nSetup AWS Secrets Manager Navigate to the Secrets Manager page by Typing Secrets Manager into the services search-bar and selecting \u0026lsquo;Secrets Manager\u0026rsquo; Choose Other type of secret and enter the secret key and value. After review the secret information, click Next button Enter Secrets name. At the Resource permissions section, click button Edit Permissions and enter below permission for allow specific role that we create before to access secrets { \u0026#34;Version\u0026#34; : \u0026#34;2012-10-17\u0026#34;, \u0026#34;Statement\u0026#34; : [ { \u0026#34;Effect\u0026#34; : \u0026#34;Allow\u0026#34;, \u0026#34;Principal\u0026#34; : { \u0026#34;AWS\u0026#34; : \u0026#34;arn:aws:iam::017820676824:role/ec2-role-for-s3-and-secret-management\u0026#34; }, \u0026#34;Action\u0026#34; : \u0026#34;secretsmanager:GetSecretValue\u0026#34;, \u0026#34;Resource\u0026#34; : \u0026#34;*\u0026#34; } ] } Review the create Secrets Manager information, you can see the sample code given from aws for configure and implementing your code to get the key. After review, click Store button. Update AWS Config file In AWS Config file, update this code to get the key from AWS Secrets Manager and using the return secret to create a new S3Client\nconst client = new SecretsManagerClient({ region: \u0026#34;us-east-1\u0026#34;, }); const secret = await client.send( new GetSecretValueCommand({ SecretId: secret_name, VersionStage: \u0026#34;AWSCURRENT\u0026#34;, }) ); jsonSecret = JSON.parse(secret.SecretString as string); s3 = new S3Client({ credentials: { accessKeyId: jsonSecret.AWS_ACCESS_KEY_ID, secretAccessKey: jsonSecret.AWS_SECRET_ACCESS_KEY, }, region: \u0026#34;us-east-1\u0026#34;, }); Deploy your src code to EC2 Server Connect to your EC2 Server by either click Connect button in EC2 Instance Connect tab or using SSH Client After doing SSH into the EC2 instance you need to change the user to the super user by using the command: #sudo su Install NodeJS and NPM using nvm #curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash Now you need to activate nvm by using the command :\n#. ~/.nvm/nvm.sh By using nvm you have to install Node.js. Put the below command in the command line :\n#nvm install node Check the nvm and Node.js version by using the commands:\n#nvm --version Install Git #yum update -y #yum install git -y You can check the version of the Git by putting the command\n#git --version Clone the repository from GitHub #git clone https://github.com/your-repository-link Now get into that folder and check the sub folders and files of the Node.js application. Use the command to check the files:\n#cd backend-aws-workshop1 #ls Install all the required dependencies #npm install Run the application #npm run dev Access the server: If everything till now is working fine then we will be able to see the application running on the port number 80. You can access the server through the public ip address of your EC2 server Test your API again: Using postman to test the api, change the IP address to your public EC2 IP address: "
+},
+{
+	"uri": "//localhost:1313/6-create-frontend-source-code-optional/",
+	"title": "Create Frontend Source Code",
+	"tags": [],
+	"description": "",
+	"content": "This project is nearly done, but if you want to have a UI to show your all your api, then lets create a frontend for its\nTo create a frontend, you can use my frontend source code sample here or use any template you want To make your frontend connect to ec2 server, define your url mapping with the public ip of your ec2 server const axiosInstance = axios.create({ baseURL: \u0026#34;http://54.165.100.46:80\u0026#34; /*this is your EC2 public ip*/, }); Now let\u0026rsquo;s see what we have created \u0026lt;3 "
+},
+{
+	"uri": "//localhost:1313/categories/",
+	"title": "Categories",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "//localhost:1313/tags/",
+	"title": "Tags",
+	"tags": [],
+	"description": "",
+	"content": ""
+}]
