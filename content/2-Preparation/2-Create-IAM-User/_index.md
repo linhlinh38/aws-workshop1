@@ -6,7 +6,7 @@ chapter = false
 pre = "<b>2.2. </b>"
 +++
 
-#### Create IAM User
+Next we will need an IAM User that have the ability to access the S3 bucket for upload, get and delete images in the bucket
 
 1. Navigate to the Identity and Access Management (IAM) page by either:
    - Clicking on the account name in the top right corner and select **My Security Credentials**

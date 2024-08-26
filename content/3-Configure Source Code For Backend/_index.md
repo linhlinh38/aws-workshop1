@@ -6,8 +6,6 @@ chapter = false
 pre = "<b>3. </b>"
 +++
 
-#### Configure Source code for backend
-
 1. Create a Nodejs express app and install the dependencies
    - Go to your project directory, open the terminal and type:
    ```js

@@ -6,7 +6,7 @@ chapter = false
 pre = "<b>2.3. </b>"
 +++
 
-#### Create EC2 Instance
+We will deploy our Node.js project to EC2 server in this workshop, we'll first need to create a new EC2 instance.
 
 1. Navigate to the EC2 page typing `EC2` into the services search-bar and selecting 'EC2' service
    ![Image](/images/preparation/create-ec2.png)

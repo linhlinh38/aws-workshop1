@@ -12,21 +12,21 @@
     <title>Delete image from s3 bucket :: AWS Account Setup</title>
 
     
-    <link href="/css/nucleus.css?1724404830" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1724404830" rel="stylesheet">
-    <link href="/css/hybrid.css?1724404830" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1724404830" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1724404830" rel="stylesheet">
-    <link href="/css/auto-complete.css?1724404830" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1724404830" rel="stylesheet">
-    <link href="/css/theme.css?1724404830" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1724404830" rel="stylesheet">
+    <link href="/css/nucleus.css?1724662821" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1724662821" rel="stylesheet">
+    <link href="/css/hybrid.css?1724662821" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1724662821" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1724662821" rel="stylesheet">
+    <link href="/css/auto-complete.css?1724662821" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1724662821" rel="stylesheet">
+    <link href="/css/theme.css?1724662821" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1724662821" rel="stylesheet">
     
-    <link href="/css/theme-workshop.css?1724404830" rel="stylesheet">
+    <link href="/css/theme-workshop.css?1724662821" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1724404830"></script>
+    <script src="/js/jquery-3.3.1.min.js?1724662821"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1724404830"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1724404830"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1724662821"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1724662821"></script>
 <script type="text/javascript">
     
         var baseurl = "\/\/localhost:1313\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1724404830"></script>
+<script type="text/javascript" src="/js/search.js?1724662821"></script>
 
     
   </div>
@@ -139,13 +139,13 @@
  
   
     
-    <li data-nav-id="/2-preparation/1-create-iam-role/" title="IAM Role" class="dd-item 
+    <li data-nav-id="/2-preparation/1-create-iam-role/" title="Creating IAM Role" class="dd-item 
         
         
         
         ">
       <a href="/2-preparation/1-create-iam-role/">
-          <b>2.1. </b>IAM Role
+          <b>2.1. </b>Creating IAM Role
           
             <i class="fas fa-check read-icon"></i>
           
@@ -642,7 +642,7 @@
 
 
 
-	<p>In <code>src/controllers/imageController.ts</code> file, create a function name <code>deleteImage</code> that handles delete an image from S3 bucket</p>
+	<p>Create a function name <strong>deleteImage</strong> that handles delete an image from S3 bucket</p>
 <ol>
 <li>Creates a <strong>DeleteObjectCommand</strong>:</li>
 </ol>
@@ -656,8 +656,12 @@
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">await</span> <span style="color:#a6e22e">s3</span>.<span style="color:#a6e22e">send</span>(<span style="color:#a6e22e">deleteObjectRequest</span>);
 </span></span></code></pre></div><ul>
 <li><strong>DeleteObjectCommand</strong> specifies the bucket name and object key to be deleted.</li>
-<li>The <code>await s3.send(deleteObjectRequest)</code> line asynchronously sends the <code>DeleteObjectCommand</code> to the <code>S3 service</code>, initiating the deletion process.</li>
+<li>The <strong>await s3.send(deleteObjectRequest)</strong> line asynchronously sends the <strong>DeleteObjectCommand</strong> to the S3 service, initiating the deletion process.</li>
 </ul>
+<ol start="2">
+<li>Testing your upload api with postman to see if its working or not.
+<img alt="Image" src="/images/preparation/postman-4.png"></li>
+</ol>
 
 
 
@@ -954,19 +958,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1724404830"></script>
-    <script src="/js/perfect-scrollbar.min.js?1724404830"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1724404830"></script>
-    <script src="/js/jquery.sticky.js?1724404830"></script>
-    <script src="/js/featherlight.min.js?1724404830"></script>
-    <script src="/js/highlight.pack.js?1724404830"></script>
+    <script src="/js/clipboard.min.js?1724662821"></script>
+    <script src="/js/perfect-scrollbar.min.js?1724662821"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1724662821"></script>
+    <script src="/js/jquery.sticky.js?1724662821"></script>
+    <script src="/js/featherlight.min.js?1724662821"></script>
+    <script src="/js/highlight.pack.js?1724662821"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1724404830"></script>
-    <script src="/js/learn.js?1724404830"></script>
-    <script src="/js/hugo-learn.js?1724404830"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1724662821"></script>
+    <script src="/js/learn.js?1724662821"></script>
+    <script src="/js/hugo-learn.js?1724662821"></script>
 
-    <link href="/mermaid/mermaid.css?1724404830" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1724404830"></script>
+    <link href="/mermaid/mermaid.css?1724662821" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1724662821"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

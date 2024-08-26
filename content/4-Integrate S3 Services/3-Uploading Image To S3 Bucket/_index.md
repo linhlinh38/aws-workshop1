@@ -6,9 +6,9 @@ chapter = false
 pre = "<b>4.3. </b>"
 +++
 
-In `src/controllers/imageController.ts` file, create a function `uploadImage` that handles uploading an image to an S3 bucket
+Create a function **uploadImage** that handles uploading an image to an S3 bucket
 
-1. Creating the `PutObjectCommand`:
+1. Creating the **PutObjectCommand**:
 
 ```js
 const fileName = Date.now() + "_" + file.originalname;
@@ -32,4 +32,7 @@ const putObjectRequest = new PutObjectCommand({
 await s3.send(putObjectRequest);
 ```
 
-- The `await s3.send(putObjectRequest)` line asynchronously sends the `PutObjectCommand` to the `S3 service`. This uploads the file to the specified bucket.
+- The await **s3.send(putObjectRequest)** line asynchronously sends the **PutObjectCommand** to the S3 service. This uploads the file to the specified bucket.
+
+3. Testing your upload api with postman to see if its working or not.
+   ![Image](/images/preparation/postman-1.png)

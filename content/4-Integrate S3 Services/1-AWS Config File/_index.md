@@ -16,7 +16,7 @@ let jsonSecret= {
 };
 ```
 
-- This code creates an object **jsonSecret** to store `AWS credentials` and `bucket name`.
+- This code creates an object **jsonSecret** to store **AWS credentials** and **bucket name**.
 
 ```js
 let s3 = new S3Client({

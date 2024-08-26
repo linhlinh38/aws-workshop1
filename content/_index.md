@@ -18,3 +18,8 @@ This project demonstrates the process of uploading images to an Amazon S3 bucket
 3. [Configure Source Code For Backend](3-Configure-Source-Code-For-Backend/)
 4. [Integrate S3 Services](4-Integrate-S3-Services/)
 5. [Publish Source Code to EC2 Server](5-Publish-Source-Code-to-EC2-Server/)
+
+#### Resources of this project:
+
+- Backend (link github): [backend-aws-workshop1](https://github.com/linhlinh38/backend-aws-workshop1).
+- Frontend (link github): [frontend-aws-workshop1](https://github.com/linhlinh38/frontend-aws-workshop1).

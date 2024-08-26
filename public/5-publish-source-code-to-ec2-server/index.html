@@ -12,21 +12,21 @@
     <title>Publish Source Code to EC2 Server :: AWS Account Setup</title>
 
     
-    <link href="/css/nucleus.css?1724404830" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1724404830" rel="stylesheet">
-    <link href="/css/hybrid.css?1724404830" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1724404830" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1724404830" rel="stylesheet">
-    <link href="/css/auto-complete.css?1724404830" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1724404830" rel="stylesheet">
-    <link href="/css/theme.css?1724404830" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1724404830" rel="stylesheet">
+    <link href="/css/nucleus.css?1724662827" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1724662827" rel="stylesheet">
+    <link href="/css/hybrid.css?1724662827" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1724662827" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1724662827" rel="stylesheet">
+    <link href="/css/auto-complete.css?1724662827" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1724662827" rel="stylesheet">
+    <link href="/css/theme.css?1724662827" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1724662827" rel="stylesheet">
     
-    <link href="/css/theme-workshop.css?1724404830" rel="stylesheet">
+    <link href="/css/theme-workshop.css?1724662827" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1724404830"></script>
+    <script src="/js/jquery-3.3.1.min.js?1724662827"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1724404830"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1724404830"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1724662827"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1724662827"></script>
 <script type="text/javascript">
     
         var baseurl = "\/\/localhost:1313\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1724404830"></script>
+<script type="text/javascript" src="/js/search.js?1724662827"></script>
 
     
   </div>
@@ -139,13 +139,13 @@
  
   
     
-    <li data-nav-id="/2-preparation/1-create-iam-role/" title="IAM Role" class="dd-item 
+    <li data-nav-id="/2-preparation/1-create-iam-role/" title="Creating IAM Role" class="dd-item 
         
         
         
         ">
       <a href="/2-preparation/1-create-iam-role/">
-          <b>2.1. </b>IAM Role
+          <b>2.1. </b>Creating IAM Role
           
             <i class="fas fa-check read-icon"></i>
           
@@ -695,35 +695,36 @@
 <ol>
 <li>Connect to your EC2 Server by either click <strong>Connect</strong> button in EC2 Instance Connect tab or using SSH Client
 <img alt="Image" src="/images/preparation/connect-ec2.png"></li>
-<li>After doing SSH into the EC2 instance you need to change the user to the super user by using the command:</li>
+<li>To access the EC2 instance using SSH and then switch to the superuser account, you&rsquo;ll need to execute the following command:</li>
 </ol>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span>    <span style="color:#960050;background-color:#1e0010">#</span><span style="color:#a6e22e">sudo</span> <span style="color:#a6e22e">su</span>
 </span></span></code></pre></div><ol start="2">
-<li>Install NodeJS and NPM using nvm</li>
+<li>To install Node.js and npm using nvm, follow these steps:</li>
 </ol>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span>    <span style="color:#960050;background-color:#1e0010">#</span><span style="color:#a6e22e">curl</span> <span style="color:#f92672">-</span><span style="color:#a6e22e">o</span><span style="color:#f92672">-</span> <span style="color:#a6e22e">https</span><span style="color:#f92672">:</span><span style="color:#75715e">//raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash
-</span></span></span></code></pre></div><p>Now you need to activate nvm by using the command :</p>
+</span></span></span></code></pre></div><p>To activate nvm, run the following command:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span>    <span style="color:#960050;background-color:#1e0010">#</span>. <span style="color:#f92672">~</span><span style="color:#960050;background-color:#1e0010">/.nvm/nvm.sh</span>
-</span></span></code></pre></div><p>By using nvm you have to install Node.js. Put the below command in the command line :</p>
+</span></span></code></pre></div><p>Now we will install Node.js using nvm, you&rsquo;ll need to execute the following command in your terminal:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span>    <span style="color:#960050;background-color:#1e0010">#</span><span style="color:#a6e22e">nvm</span> <span style="color:#a6e22e">install</span> <span style="color:#a6e22e">node</span>
 </span></span></code></pre></div><p>Check the nvm and Node.js version by using the commands:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span>    <span style="color:#960050;background-color:#1e0010">#</span><span style="color:#a6e22e">nvm</span> <span style="color:#f92672">--</span><span style="color:#a6e22e">version</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#960050;background-color:#1e0010">#</span><span style="color:#a6e22e">node</span> <span style="color:#f92672">--</span><span style="color:#a6e22e">version</span>
 </span></span></code></pre></div><p><img alt="Image" src="/images/preparation/ssh-1.png"></p>
 <ol start="3">
 <li>Install Git</li>
 </ol>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span>    <span style="color:#960050;background-color:#1e0010">#</span><span style="color:#a6e22e">yum</span> <span style="color:#a6e22e">update</span> <span style="color:#f92672">-</span><span style="color:#a6e22e">y</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#960050;background-color:#1e0010">#</span><span style="color:#a6e22e">yum</span> <span style="color:#a6e22e">install</span> <span style="color:#a6e22e">git</span> <span style="color:#f92672">-</span><span style="color:#a6e22e">y</span>
-</span></span></code></pre></div><p>You can check the version of the Git by putting the command</p>
+</span></span></code></pre></div><p>To check if Git is installed successfully, you can run the following command:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span>    <span style="color:#960050;background-color:#1e0010">#</span><span style="color:#a6e22e">git</span> <span style="color:#f92672">--</span><span style="color:#a6e22e">version</span>
 </span></span></code></pre></div><p><img alt="Image" src="/images/preparation/ssh-2.png"></p>
 <ol start="4">
 <li>Clone the repository from GitHub</li>
 </ol>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span>    <span style="color:#960050;background-color:#1e0010">#</span><span style="color:#a6e22e">git</span> <span style="color:#a6e22e">clone</span> <span style="color:#a6e22e">https</span><span style="color:#f92672">:</span><span style="color:#75715e">//github.com/your-repository-link
-</span></span></span></code></pre></div><p>Now get into that folder and check the sub folders and files of the Node.js application. Use the command to check the files:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span>   <span style="color:#960050;background-color:#1e0010">#</span><span style="color:#a6e22e">cd</span> <span style="color:#a6e22e">backend</span><span style="color:#f92672">-</span><span style="color:#a6e22e">aws</span><span style="color:#f92672">-</span><span style="color:#a6e22e">workshop1</span>
-</span></span><span style="display:flex;"><span>   <span style="color:#960050;background-color:#1e0010">#</span><span style="color:#a6e22e">ls</span>
+</span></span></span></code></pre></div><p>Now get into the folders and files of the Node.js application. Use the command to check the files:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span>   <span style="color:#960050;background-color:#1e0010">#</span><span style="color:#a6e22e">ls</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#960050;background-color:#1e0010">#</span><span style="color:#a6e22e">cd</span> <span style="color:#a6e22e">backend</span><span style="color:#f92672">-</span><span style="color:#a6e22e">aws</span><span style="color:#f92672">-</span><span style="color:#a6e22e">workshop1</span>
 </span></span></code></pre></div><ol start="5">
 <li>Install all the required dependencies</li>
 </ol>
@@ -737,7 +738,7 @@
 <li>Access the server:</li>
 </ol>
 <ul>
-<li>If everything till now is working fine then we will be able to see the application running on the port number 80. You can access the server through the public ip address of your EC2 server
+<li>If you&rsquo;ve successfully completed all the previous steps, you should be able to access your application running on port 80 by using the public IP address of your EC2 instance.
 <img alt="Image" src="/images/preparation/ssh-4.png"></li>
 </ul>
 <ol start="8">
@@ -1039,19 +1040,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1724404830"></script>
-    <script src="/js/perfect-scrollbar.min.js?1724404830"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1724404830"></script>
-    <script src="/js/jquery.sticky.js?1724404830"></script>
-    <script src="/js/featherlight.min.js?1724404830"></script>
-    <script src="/js/highlight.pack.js?1724404830"></script>
+    <script src="/js/clipboard.min.js?1724662827"></script>
+    <script src="/js/perfect-scrollbar.min.js?1724662827"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1724662827"></script>
+    <script src="/js/jquery.sticky.js?1724662827"></script>
+    <script src="/js/featherlight.min.js?1724662827"></script>
+    <script src="/js/highlight.pack.js?1724662827"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1724404830"></script>
-    <script src="/js/learn.js?1724404830"></script>
-    <script src="/js/hugo-learn.js?1724404830"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1724662827"></script>
+    <script src="/js/learn.js?1724662827"></script>
+    <script src="/js/hugo-learn.js?1724662827"></script>
 
-    <link href="/mermaid/mermaid.css?1724404830" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1724404830"></script>
+    <link href="/mermaid/mermaid.css?1724662827" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1724662827"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

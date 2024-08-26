@@ -1,12 +1,12 @@
 +++
-title = "IAM Role"
+title = "Creating IAM Role"
 date = 2021
 weight = 1
 chapter = false
 pre = "<b>2.1. </b>"
 +++
 
-#### Creating IAM Role
+We will create a new role for provide our EC2 Server access to the S3 bucket and secrets manager.
 
 1. **Log-in to the AWS Console** from the [AWS Web Services homepage](https://aws.amazon.com/)
 2. Navigate to the Identity and Access Management (IAM) page by either:

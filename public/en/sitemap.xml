@@ -4,16 +4,6 @@
   <url>
     <loc>//localhost:1313/1-introduction/</loc>
     <lastmod>2024-08-19T00:00:00+07:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="vi"
-                href="//localhost:1313/vi/1-introduction/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="//localhost:1313/1-introduction/"
-                />
   </url><url>
     <loc>//localhost:1313/</loc>
     <lastmod>1970-01-01T07:33:41+07:00</lastmod>
@@ -30,74 +20,24 @@
   </url><url>
     <loc>//localhost:1313/2-preparation/1-create-iam-role/</loc>
     <lastmod>1970-01-01T07:33:41+07:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="vi"
-                href="//localhost:1313/vi/2-preparation/1-create-iam-role/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="//localhost:1313/2-preparation/1-create-iam-role/"
-                />
   </url><url>
     <loc>//localhost:1313/4-integrate-s3-services/1-aws-config-file/</loc>
     <lastmod>1970-01-01T07:33:40+07:00</lastmod>
   </url><url>
     <loc>//localhost:1313/2-preparation/2-create-iam-user/</loc>
     <lastmod>1970-01-01T07:33:41+07:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="vi"
-                href="//localhost:1313/vi/2-preparation/2-create-iam-user/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="//localhost:1313/2-preparation/2-create-iam-user/"
-                />
   </url><url>
     <loc>//localhost:1313/2-preparation/</loc>
     <lastmod>1970-01-01T07:33:41+07:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="vi"
-                href="//localhost:1313/vi/2-preparation/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="//localhost:1313/2-preparation/"
-                />
   </url><url>
     <loc>//localhost:1313/4-integrate-s3-services/2-get-all-images-pre-signed-urls/</loc>
     <lastmod>1970-01-01T07:33:40+07:00</lastmod>
   </url><url>
     <loc>//localhost:1313/3-configure-source-code-for-backend/</loc>
     <lastmod>1970-01-01T07:33:41+07:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="vi"
-                href="//localhost:1313/vi/3-configure-source-code-for-backend/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="//localhost:1313/3-configure-source-code-for-backend/"
-                />
   </url><url>
     <loc>//localhost:1313/2-preparation/3-create-ec2-instance/</loc>
     <lastmod>1970-01-01T07:33:41+07:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="vi"
-                href="//localhost:1313/vi/2-preparation/3-create-ec2-instance/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="//localhost:1313/2-preparation/3-create-ec2-instance/"
-                />
   </url><url>
     <loc>//localhost:1313/2-preparation/4-create-s3-bucket/</loc>
     <lastmod>1970-01-01T07:33:41+07:00</lastmod>
@@ -110,16 +50,6 @@
   </url><url>
     <loc>//localhost:1313/4-integrate-s3-services/</loc>
     <lastmod>1970-01-01T07:33:40+07:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="vi"
-                href="//localhost:1313/vi/4-integrate-s3-services/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="//localhost:1313/4-integrate-s3-services/"
-                />
   </url><url>
     <loc>//localhost:1313/5-publish-source-code-to-ec2-server/</loc>
     <lastmod>1970-01-01T07:33:41+07:00</lastmod>

@@ -65,25 +65,25 @@ In AWS Config file, update this code to get the key from AWS Secrets Manager and
 
 1. Connect to your EC2 Server by either click **Connect** button in EC2 Instance Connect tab or using SSH Client
    ![Image](/images/preparation/connect-ec2.png)
-2. After doing SSH into the EC2 instance you need to change the user to the super user by using the command:
+2. To access the EC2 instance using SSH and then switch to the superuser account, you'll need to execute the following command:
 
 ```js
     #sudo su
 ```
 
-2. Install NodeJS and NPM using nvm
+2. To install Node.js and npm using nvm, follow these steps:
 
 ```js
     #curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash
 ```
 
-Now you need to activate nvm by using the command :
+To activate nvm, run the following command:
 
 ```js
     #. ~/.nvm/nvm.sh
 ```
 
-By using nvm you have to install Node.js. Put the below command in the command line :
+Now we will install Node.js using nvm, you'll need to execute the following command in your terminal:
 
 ```js
     #nvm install node
@@ -93,6 +93,7 @@ Check the nvm and Node.js version by using the commands:
 
 ```js
     #nvm --version
+    #node --version
 ```
 
 ![Image](/images/preparation/ssh-1.png)
@@ -104,7 +105,7 @@ Check the nvm and Node.js version by using the commands:
     #yum install git -y
 ```
 
-You can check the version of the Git by putting the command
+To check if Git is installed successfully, you can run the following command:
 
 ```js
     #git --version
@@ -118,11 +119,11 @@ You can check the version of the Git by putting the command
     #git clone https://github.com/your-repository-link
 ```
 
-Now get into that folder and check the sub folders and files of the Node.js application. Use the command to check the files:
+Now get into the folders and files of the Node.js application. Use the command to check the files:
 
 ```js
-   #cd backend-aws-workshop1
    #ls
+   #cd backend-aws-workshop1
 ```
 
 5. Install all the required dependencies
@@ -141,7 +142,7 @@ Now get into that folder and check the sub folders and files of the Node.js appl
 
 7. Access the server:
 
-- If everything till now is working fine then we will be able to see the application running on the port number 80. You can access the server through the public ip address of your EC2 server
+- If you've successfully completed all the previous steps, you should be able to access your application running on port 80 by using the public IP address of your EC2 instance.
   ![Image](/images/preparation/ssh-4.png)
 
 8. Test your API again:

@@ -12,21 +12,21 @@
     <title>Uploading image to s3 bucket :: AWS Account Setup</title>
 
     
-    <link href="/css/nucleus.css?1724404830" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1724404830" rel="stylesheet">
-    <link href="/css/hybrid.css?1724404830" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1724404830" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1724404830" rel="stylesheet">
-    <link href="/css/auto-complete.css?1724404830" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1724404830" rel="stylesheet">
-    <link href="/css/theme.css?1724404830" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1724404830" rel="stylesheet">
+    <link href="/css/nucleus.css?1724662817" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1724662817" rel="stylesheet">
+    <link href="/css/hybrid.css?1724662817" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1724662817" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1724662817" rel="stylesheet">
+    <link href="/css/auto-complete.css?1724662817" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1724662817" rel="stylesheet">
+    <link href="/css/theme.css?1724662817" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1724662817" rel="stylesheet">
     
-    <link href="/css/theme-workshop.css?1724404830" rel="stylesheet">
+    <link href="/css/theme-workshop.css?1724662817" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1724404830"></script>
+    <script src="/js/jquery-3.3.1.min.js?1724662817"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1724404830"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1724404830"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1724662817"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1724662817"></script>
 <script type="text/javascript">
     
         var baseurl = "\/\/localhost:1313\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1724404830"></script>
+<script type="text/javascript" src="/js/search.js?1724662817"></script>
 
     
   </div>
@@ -139,13 +139,13 @@
  
   
     
-    <li data-nav-id="/2-preparation/1-create-iam-role/" title="IAM Role" class="dd-item 
+    <li data-nav-id="/2-preparation/1-create-iam-role/" title="Creating IAM Role" class="dd-item 
         
         
         
         ">
       <a href="/2-preparation/1-create-iam-role/">
-          <b>2.1. </b>IAM Role
+          <b>2.1. </b>Creating IAM Role
           
             <i class="fas fa-check read-icon"></i>
           
@@ -642,9 +642,9 @@
 
 
 
-	<p>In <code>src/controllers/imageController.ts</code> file, create a function <code>uploadImage</code> that handles uploading an image to an S3 bucket</p>
+	<p>Create a function <strong>uploadImage</strong> that handles uploading an image to an S3 bucket</p>
 <ol>
-<li>Creating the <code>PutObjectCommand</code>:</li>
+<li>Creating the <strong>PutObjectCommand</strong>:</li>
 </ol>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">fileName</span> <span style="color:#f92672">=</span> Date.<span style="color:#a6e22e">now</span>() <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;_&#34;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">file</span>.<span style="color:#a6e22e">originalname</span>;
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">fileContent</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">file</span>.<span style="color:#a6e22e">buffer</span>;
@@ -665,8 +665,12 @@
 </ol>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">await</span> <span style="color:#a6e22e">s3</span>.<span style="color:#a6e22e">send</span>(<span style="color:#a6e22e">putObjectRequest</span>);
 </span></span></code></pre></div><ul>
-<li>The <code>await s3.send(putObjectRequest)</code> line asynchronously sends the <code>PutObjectCommand</code> to the <code>S3 service</code>. This uploads the file to the specified bucket.</li>
+<li>The await <strong>s3.send(putObjectRequest)</strong> line asynchronously sends the <strong>PutObjectCommand</strong> to the S3 service. This uploads the file to the specified bucket.</li>
 </ul>
+<ol start="3">
+<li>Testing your upload api with postman to see if its working or not.
+<img alt="Image" src="/images/preparation/postman-1.png"></li>
+</ol>
 
 
 
@@ -963,19 +967,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1724404830"></script>
-    <script src="/js/perfect-scrollbar.min.js?1724404830"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1724404830"></script>
-    <script src="/js/jquery.sticky.js?1724404830"></script>
-    <script src="/js/featherlight.min.js?1724404830"></script>
-    <script src="/js/highlight.pack.js?1724404830"></script>
+    <script src="/js/clipboard.min.js?1724662817"></script>
+    <script src="/js/perfect-scrollbar.min.js?1724662817"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1724662817"></script>
+    <script src="/js/jquery.sticky.js?1724662817"></script>
+    <script src="/js/featherlight.min.js?1724662817"></script>
+    <script src="/js/highlight.pack.js?1724662817"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1724404830"></script>
-    <script src="/js/learn.js?1724404830"></script>
-    <script src="/js/hugo-learn.js?1724404830"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1724662817"></script>
+    <script src="/js/learn.js?1724662817"></script>
+    <script src="/js/hugo-learn.js?1724662817"></script>
 
-    <link href="/mermaid/mermaid.css?1724404830" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1724404830"></script>
+    <link href="/mermaid/mermaid.css?1724662817" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1724662817"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
