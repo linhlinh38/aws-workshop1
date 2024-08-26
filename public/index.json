@@ -11,7 +11,7 @@
 	"title": "AWS Project: Uploading Image To S3 Bucket - Server Deploy In EC2",
 	"tags": [],
 	"description": "",
-	"content": "AWS Project: Uploading Image To S3 Bucket - Server Deploy In EC2 Overview This project demonstrates the process of uploading images to an Amazon S3 bucket using the AWS SDK and deploying the server application on an Amazon EC2 instance. By following the steps outlined in this guide, you\u0026rsquo;ll gain a hands-on understanding of how to leverage AWS services for image storage and server deployment.\nMain Content Introduction Preparation Configure Source Code For Backend Integrate S3 Services Publish Source Code to EC2 Server Resources of this project: Backend (link github): backend-aws-workshop1. Frontend (link github): frontend-aws-workshop1. "
+	"content": "AWS Project: Uploading Image To S3 Bucket - Server Deploy In EC2 Overview This project demonstrates the process of uploading images to an Amazon S3 bucket using the AWS SDK and deploying the server application on an Amazon EC2 instance. By following the steps outlined in this guide, you\u0026rsquo;ll gain a hands-on understanding of how to leverage AWS services for image storage and server deployment.\nMain Content Introduction Preparation Configure Source Code For Backend Integrate S3 Services Publish Source Code to EC2 Server 6. Clean up resources Resources of this project: Backend (link github): backend-aws-workshop1. Frontend (link github): frontend-aws-workshop1. "
 },
 {
 	"uri": "//localhost:1313/2-preparation/1-create-iam-role/",
@@ -103,6 +103,13 @@
 	"tags": [],
 	"description": "",
 	"content": "This project is nearly done, but if you want to have a UI to show your all your api, then lets create a frontend for its\nTo create a frontend, you can use my frontend source code sample here or use any template you want To make your frontend connect to ec2 server, define your url mapping with the public ip of your ec2 server const axiosInstance = axios.create({ baseURL: \u0026#34;http://54.165.100.46:80\u0026#34; /*this is your EC2 public ip*/, }); Run the Frontend Source Now let\u0026rsquo;s see what we have created \u0026lt;3 "
+},
+{
+	"uri": "//localhost:1313/7-clean-up-resources/",
+	"title": "Clean up resources",
+	"tags": [],
+	"description": "",
+	"content": "In the end of this workshop, we will clean up all resources that we have created!\nTerminate the EC2 instance: This will stop the instance from running and release its resources. In the Instances list, locate the EC2 instance you created. Select the instance by checking the checkbox next to it. Click the \u0026ldquo;Actions\u0026rdquo; button. Choose \u0026ldquo;Instance Actions\u0026rdquo; and then select \u0026ldquo;Terminate Instance\u0026rdquo;. Confirm the termination by clicking \u0026ldquo;Terminate\u0026rdquo;. Delete the S3 bucket: Be cautious when deleting a bucket, as it will also delete all the objects stored within it. Ensure you have a backup if needed. Locate the S3 bucket you created. Select the bucket by clicking on its name. If the bucket contains objects, you can either empty it manually by deleting each object or use the \u0026ldquo;Empty bucket\u0026rdquo; option. To empty the bucket, click the \u0026ldquo;Actions\u0026rdquo; button, then \u0026ldquo;Manage bucket\u0026rdquo; and finally \u0026ldquo;Empty bucket\u0026rdquo;. Once the bucket is empty (or if it was already empty), click the \u0026ldquo;Actions\u0026rdquo; button again. Choose \u0026ldquo;Delete\u0026rdquo; and confirm the deletion. Remove any associated security groups or IAM roles: These may have been created to grant permissions to the EC2 instance or S3 bucket. In the IAM console, go to \u0026ldquo;Roles\u0026rdquo;. Check the roles created for your EC2 instance or S3 bucket and delete them. "
 },
 {
 	"uri": "//localhost:1313/categories/",

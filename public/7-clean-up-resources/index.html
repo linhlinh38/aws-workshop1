@@ -9,7 +9,7 @@
 
     <link rel="icon" href="/images/favicon.png" type="image/png">
 
-    <title>Create EC2 Instance :: AWS Account Setup</title>
+    <title>Clean up resources :: AWS Account Setup</title>
 
     
     <link href="/css/nucleus.css?1724663814" rel="stylesheet">
@@ -36,7 +36,7 @@
     </style>
     
   </head>
-  <body class="" data-url="/2-preparation/3-create-ec2-instance/">
+  <body class="" data-url="/7-clean-up-resources/">
     <nav id="sidebar" class="showVisitedLinks">
 
 
@@ -109,7 +109,7 @@
   
     
     <li data-nav-id="/2-preparation/" title="Preparation" class="dd-item 
-        parent
+        
         
         
         ">
@@ -197,7 +197,7 @@
     
     <li data-nav-id="/2-preparation/3-create-ec2-instance/" title="Create EC2 Instance" class="dd-item 
         
-        active
+        
         
         ">
       <a href="/2-preparation/3-create-ec2-instance/">
@@ -488,7 +488,7 @@
     
     <li data-nav-id="/7-clean-up-resources/" title="Clean up resources" class="dd-item 
         
-        
+        active
         
         ">
       <a href="/7-clean-up-resources/">
@@ -539,7 +539,7 @@
                   
                     
                     
-                      <option id="en" value="//localhost:1313/2-preparation/3-create-ec2-instance/" selected>English</option>
+                      <option id="en" value="//localhost:1313/7-clean-up-resources/" selected>English</option>
                     
                   
               
@@ -627,13 +627,7 @@
             
           
           
-            
-            
-          
-          
-            <a href='/'>AWS Project: Uploading Image To S3 Bucket - Server Deploy In EC2</a> > <a href='/2-preparation/'>Preparation</a> > Create EC2 Instance
-          
-        
+            <a href='/'>AWS Project: Uploading Image To S3 Bucket - Server Deploy In EC2</a> > Clean up resources
           
         
           
@@ -660,7 +654,7 @@
           
             <h1>
               
-              Create EC2 Instance
+              Clean up resources
             </h1>
           
 
@@ -668,35 +662,34 @@
 
 
 
-	<p>We will deploy our Node.js project to EC2 server in this workshop, we&rsquo;ll first need to create a new EC2 instance.</p>
+	<p>In the end of this workshop, we will clean up all resources that we have created!</p>
 <ol>
-<li>Navigate to the EC2 page typing <code>EC2</code> into the services search-bar and selecting &lsquo;EC2&rsquo; service
-<img alt="Image" src="/images/preparation/create-ec2.png"></li>
-<li>In the EC2 Dashnoard, select <strong>Launch instance</strong> for create a new EC2 Instance.
-<img alt="Image" src="/images/preparation/create-ec2-1.png"></li>
-<li>Enter a name for EC2 Instance (for example: upload-image-to-s3-server).
-<img alt="Image" src="/images/preparation/create-ec2-2.png"></li>
-<li>Choose an Amazon Machine Image (for example I choose Amazon Linux) and choose instance type (for example I choose t2.micro).</li>
+<li>Terminate the EC2 instance: This will stop the instance from running and release its resources.</li>
 </ol>
 <ul>
-<li><strong>*Free Tier Eligible:</strong> If you have trial account then the options which marked Free Tier Eligible is free for your account.
-<img alt="Image" src="/images/preparation/create-ec2-3.png"></li>
+<li>In the Instances list, locate the EC2 instance you created.</li>
+<li>Select the instance by checking the checkbox next to it.</li>
+<li>Click the &ldquo;Actions&rdquo; button.</li>
+<li>Choose &ldquo;Instance Actions&rdquo; and then select &ldquo;Terminate Instance&rdquo;.</li>
+<li>Confirm the termination by clicking &ldquo;Terminate&rdquo;.</li>
 </ul>
-<ol start="5">
-<li>
-<p>Create a new key pair and allow the access from the internet to your EC2 instance.
-<strong>Note:</strong> Key pair would help to log in to our instance using an SSH client.
-<img alt="Image" src="/images/preparation/create-ec2-4.png"></p>
-</li>
-<li>
-<p>Dropdown <strong>Advanced details</strong> tab, at <strong>IAM instance profile</strong> section, attach the IAM Role (ec2-role-for-s3-and-secret-management) you have just created above to your EC2 instance. This role will allow your EC2 instance to access the S3 bucket and AWS secret manager.
-<img alt="Image" src="/images/preparation/create-ec2-6.png"></p>
-</li>
-<li>
-<p>You can review the summary of the create EC2 information from the left bar and then click <strong>Launch instance</strong>.
-<img alt="Image" src="/images/preparation/create-ec2-5.png"></p>
-</li>
+<ol start="2">
+<li>Delete the S3 bucket: Be cautious when deleting a bucket, as it will also delete all the objects stored within it. Ensure you have a backup if needed.</li>
 </ol>
+<ul>
+<li>Locate the S3 bucket you created.</li>
+<li>Select the bucket by clicking on its name.</li>
+<li>If the bucket contains objects, you can either empty it manually by deleting each object or use the &ldquo;Empty bucket&rdquo; option. To empty the bucket, click the &ldquo;Actions&rdquo; button, then &ldquo;Manage bucket&rdquo; and finally &ldquo;Empty bucket&rdquo;.</li>
+<li>Once the bucket is empty (or if it was already empty), click the &ldquo;Actions&rdquo; button again.</li>
+<li>Choose &ldquo;Delete&rdquo; and confirm the deletion.</li>
+</ul>
+<ol start="3">
+<li>Remove any associated security groups or IAM roles: These may have been created to grant permissions to the EC2 instance or S3 bucket.</li>
+</ol>
+<ul>
+<li>In the IAM console, go to &ldquo;Roles&rdquo;.</li>
+<li>Check the roles created for your EC2 instance or S3 bucket and delete them.</li>
+</ul>
 
 
 
@@ -756,7 +749,6 @@
             
                 
                     
-                    
                 
                 
 
@@ -771,9 +763,6 @@
             
             
                 
-                    
-                        
-                        
                     
                 
                 
@@ -807,7 +796,6 @@
             
                 
                     
-                    
                 
                 
 
@@ -823,9 +811,6 @@
             
             
                 
-                    
-                        
-                        
                     
                 
                 
@@ -975,6 +960,7 @@
             
             
                 
+                    
                     
                 
                 
@@ -996,10 +982,10 @@
 	 
 	 
 		
-			<a class="nav nav-prev" href="/2-preparation/2-create-iam-user/" title="Create IAM User"> <i class="fa fa-chevron-left"></i></a>
+			<a class="nav nav-prev" href="/6-create-frontend-source-code-optional/" title="Create Frontend Source Code"> <i class="fa fa-chevron-left"></i></a>
 		
 		
-			<a class="nav nav-next" href="/2-preparation/4-create-s3-bucket/" title="Create S3 Bucket" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+			<a class="nav nav-next" href="/1-introduction/" title="Introduction" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>
